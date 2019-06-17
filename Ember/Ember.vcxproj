@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{21D174A6-5734-4A3B-B04C-3B52D7613534}</ProjectGuid>
+    <ProjectGuid>{ADA3DFE4-1D04-4ABC-BBEF-FA320D07C250}</ProjectGuid>
     <RootNamespace>Ember</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
