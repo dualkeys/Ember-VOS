@@ -1,0 +1,7 @@
+vs/
+*.*obj
+*.*ilk
+*.*log
+*.*db
+*.*ipch
+*.*suo
