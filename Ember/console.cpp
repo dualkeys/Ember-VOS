@@ -3,6 +3,10 @@
 #include <vector>
 #include <sstream>
 #include <iostream>
+#include <memory>
+#include <stdexcept>
+#include <array>
+#include <cstdio>
 
 using namespace std;
 #define on ,
@@ -46,3 +50,15 @@ vector<string> splitBySpace(string input) {
 	return result;
 }
 
+string exec(const char* cmd) {
+	array<char, 128> buffer;
+	string result;
+	unique_ptr<FILE, decltype(&_pclose)> pipe(_popen(cmd, "r"), _pclose);
+	if (!pipe) {
+		throw runtime_error("popen() failed!");
+	}
+	while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+		result += buffer.data();
+	}
+	return result;
+}
