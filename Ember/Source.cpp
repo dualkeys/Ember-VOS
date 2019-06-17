@@ -47,11 +47,9 @@ void commandParser(string comm) {
 		cprint(err, '4', true);
 	} else if (command == "cd") {
 		string passingParams;
-		if (params.size() >= 2)
-			copy(params.begin(), params.end() - 1, ostream_iterator<string>(cout, ","));
-		if (params.size() >= 1)
-			passingParams = params.back();
-		string temp = "./Commands/cd.exe --cwd=\"" + cwd + "\" --params=\"" + passingParams + "\"";
+		if (params.size() >= 2) copy(params.begin(), params.end() - 1, ostream_iterator<string>(cout, ","));
+		if (params.size() >= 1) passingParams = params.back();
+		string temp = "\"Commands\\cd.exe\" --cwd=\"" + cwd + "\" --params=\"" + passingParams + "\"";
 		exec(temp.c_str());
 	} else if (command == "list" || command == "ls") {
 		string temp = "dir " + cwd;

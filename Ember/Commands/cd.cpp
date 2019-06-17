@@ -6,7 +6,7 @@
 using namespace std;
 
 vector<string> splitBySpace(string input) {
-	vector<string> result;
+ 	vector<string> result;
 	istringstream iss(input);
 	for (string s; iss >> s;) {
 		result.push_back(s);
@@ -46,8 +46,7 @@ int main(int varc, char** var) {
 			if (i != tempCwd.size() - 1) ss << tempCwd[i];
 		}
 		cwd = ss.str();
-	}
-	else {
+	} else {
 		if (cwd != "" && cwd[cwd.size() - 1] == '/') cwd = cwd + params[0];
 		else if (cwd != "") cwd = cwd + "/" + params[0];
 		else cwd = params[0];
