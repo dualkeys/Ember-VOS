@@ -37,6 +37,6 @@ project "Ember"
 	
 project "cd"
 	kind "ConsoleApp"
-	targetdir "bin/Commands/%{cfg.buildcfg}"
+	targetdir "bin/%{cfg.buildcfg}/Commands"
 	includedirs {"Ember/Commands/include"}
 	files {"Ember/Commands/**.cpp", "Ember/Commands/**.h", "Ember/Commands/**.c", "Ember/Commands/**.hpp"}
