@@ -18,10 +18,12 @@ void readDirectory(const std::string& path, vector<string>& v) {
 
 	WIN32_FIND_DATA data;
 	HANDLE hFind;
-
-	if ((hFind = FindFirstFile(pattern.c_str(), &data)) != INVALID_HANDLE_VALUE) {
+	LPCWSTR buffer = (std::wstring(pattern.begin(), pattern.end())).c_str();
+	if ((hFind = FindFirstFile(buffer, &data)) != INVALID_HANDLE_VALUE) {
 		do {
-			v.push_back(data.cFileName);
+			std::wstring wsBuf(data.cFileName);
+			std::string strBuf(wsBuf.begin(), wsBuf.end());
+			v.push_back(strBuf);
 		} while (FindNextFile(hFind, &data) != 0);
 		FindClose(hFind);
 	}
